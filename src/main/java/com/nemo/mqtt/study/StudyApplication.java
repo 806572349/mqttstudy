@@ -19,7 +19,8 @@ public class StudyApplication implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-        for (int i = 0; i <=18000; i++) {
+        for (int i = 0; i <=180000; i++) {
+            Thread.sleep(10);
             mqttGateway.sendToMqtt("这是我发的多"+i,"topic");
 
         }

@@ -56,7 +56,9 @@ public class MqttSenderConfig {
         mqttConnectOptions.setPassword(password.toCharArray());
         mqttConnectOptions.setServerURIs(new String[]{hostUrl});
         mqttConnectOptions.setKeepAliveInterval(20000);
-        mqttConnectOptions.setMaxInflight(20000);
+        mqttConnectOptions.setMaxInflight(56000);
+        //尝试重新链接
+        mqttConnectOptions.setAutomaticReconnect(true);
         return mqttConnectOptions;
     }
     @Bean
