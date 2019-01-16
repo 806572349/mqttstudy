@@ -72,8 +72,8 @@ Welcome<br/>
         keepAlive = 100,
         cleanSession = false,
         ssl = false,
-        // userName = 'mao2080',
-        // password = '123',
+        userName = 'admin',
+        password = '123456',
         topic = 'topic';
     client = new Paho.MQTT.Client(hostname, port, clientId);
     //建立客户端实例
@@ -88,9 +88,8 @@ Welcome<br/>
         keepAliveInterval: keepAlive,
         cleanSession: cleanSession,
         useSSL: ssl,
-        qos: 1,
-        // userName: userName,
-        // password: password,
+        userName: userName,
+        password: password,
         onSuccess: onConnect,
         onFailure: function (e) {
             console.log(e);
