@@ -20,9 +20,10 @@ public class StudyApplication implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
         for (int i = 0; i <=18000; i++) {
-            mqttGateway.sendToMqtt(""+i,"topic");
+            mqttGateway.sendToMqtt("这是我发的多"+i,"topic");
 
         }
+//        mqttGateway.sendToMqtt("这是测试","topic");
 
     }
 }
