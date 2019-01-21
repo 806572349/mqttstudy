@@ -1,9 +1,17 @@
 package com.nemo.mqtt.study;
 
+import com.alibaba.fastjson.JSON;
+import org.slf4j.LoggerFactory;
 import org.springframework.integration.handler.AbstractMessageHandler;
 import org.springframework.messaging.Message;
 import org.springframework.messaging.MessageHandler;
+import org.springframework.messaging.MessageHeaders;
 import org.springframework.messaging.MessagingException;
+
+import java.lang.reflect.Type;
+import java.nio.charset.Charset;
+import java.nio.charset.StandardCharsets;
+import java.util.List;
 
 
 public class DefaultMessageHandler extends AbstractMessageHandler {
@@ -11,8 +19,14 @@ public class DefaultMessageHandler extends AbstractMessageHandler {
 
     @Override
     protected void handleMessageInternal(Message<?> message) throws Exception {
-        System.out.println("收到消息："+message.getPayload().toString());
 
+        String payload = message.getPayload().toString();
+        JsonData jsonData = JSON.parseObject(payload, JsonData.class);
+
+        System.out.println(payload);
+        MessageHeaders headers = message.getHeaders();
+//        headers.entrySet().forEach(a-> System.out.println("key:"+a.getKey()+"value:"+a.getValue()));
+        //年末
         //4901
         //5901
         //5952
