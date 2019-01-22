@@ -1,7 +1,6 @@
 package com.nemo.mqtt.study;
 
 import com.alibaba.fastjson.JSON;
-import org.apache.tomcat.util.security.MD5Encoder;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.boot.test.context.SpringBootTest;
